@@ -138,7 +138,7 @@ app.post('/login', async (req, res) => {
 		res.status(404).json({ error: 'User Not Found' });
 	}
 });
-// app.post('/register', (req, res) => {
+// app.get('/register', (req, res) => {
 // 	res.send(req.body);
 // });
 

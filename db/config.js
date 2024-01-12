@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-	'mongodb+srv://wirdan:pakistan@cluster0.3a1op15.mongodb.net/e-commerce?retryWrites=true&w=majority'
+	'mongodb+srv://wirdan:pakistan@cluster0.3a1op15.mongodb.net/e-commerce?retryWrites=true&w=majority&directConnection=true'
 );
 const db = mongoose.connection;
 
