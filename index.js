@@ -5,7 +5,7 @@ const Product = require('./db/Modals/Products');
 const cors = require('cors');
 const app = express();
 const port = 5000;
-const http = require('http');
+
 app.use(express.json());
 app.use(cors());
 app.get('/', (req, res) => {
@@ -143,10 +143,9 @@ app.post('/login', async (req, res) => {
 // app.get('/register', (req, res) => {
 // 	res.send(req.body);
 // });
-const server = http.createServer(app);
-server.listen(port, () => {
-	console.log('this app is running on ' + port);
+// const http = require('http');
+// const server = http.createServer(app);
+// server.listen(port,()=>{console.log('this app is running on '+port)});
+app.listen(port, () => {
+	console.log(`https://localhost:${port}`);
 });
-// app.listen(port, () => {
-// 	console.log(`https://localhost:${port}`);
-// });
