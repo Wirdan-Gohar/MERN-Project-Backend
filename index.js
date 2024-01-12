@@ -8,7 +8,9 @@ const port = 5000;
 
 app.use(express.json());
 app.use(cors());
-
+app.get('/', (req, res) => {
+	res.send('Backend is running Fine');
+});
 // Create Products API
 app.post('/add-products', async (req, res) => {
 	try {
