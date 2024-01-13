@@ -5,13 +5,13 @@ files:
     destination: /var/www/Mern/back-end
 hooks:
   ApplicationStop:
-    - location: shell-scripts/stop.sh
+    - location: application_stop.sh
       timeout: 300
       runas: ubuntu
   BeforeInstall:
-    - location: shell-scripts/before-start.sh
+    - location: before_install.sh
       timeout: 300
       runas: ubuntu
   ApplicationStart:
-    - location: shell-scripts/start.sh
+    - location: application_start.sh
       timeout:
