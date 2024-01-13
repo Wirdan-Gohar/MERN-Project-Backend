@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/Mern/back-end
+hooks:
+  ApplicationStop:
+    - location: shell-scripts/stop.sh
+      timeout: 300
+      runas: ubuntu
+  BeforeInstall:
+    - location: shell-scripts/before-start.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: shell-scripts/start.sh
+      timeout:
