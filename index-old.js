@@ -143,7 +143,9 @@ app.post('/login', async (req, res) => {
 // app.get('/register', (req, res) => {
 // 	res.send(req.body);
 // });
-
+// const http = require('http');
+// const server = http.createServer(app);
+// server.listen(port,()=>{console.log('this app is running on '+port)});
 app.listen(port, () => {
 	console.log(`https://localhost:${port}`);
 });
