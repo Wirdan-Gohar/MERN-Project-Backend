@@ -2,10 +2,11 @@ const jwt = require('jsonwebtoken');
 
 function verifyToken(req, res, next) {
 	// split is using to split barer and token and store the token in headerToken
-	const headerToken = req.headers['authorization'].split(' ')[1];
+	const headerToken = req.headers['authorization'];
 	try {
 		if (headerToken) {
-			jwt.verify(headerToken, jwtSecreteKey, (err, decoded) => {
+			const splitToken = headerToken.split(' ')[1];
+			jwt.verify(splitToken, jwtSecreteKey, (err, decoded) => {
 				if (err) {
 					res.status(401).json({
 						Error: err,

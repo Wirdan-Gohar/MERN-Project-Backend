@@ -42,7 +42,7 @@ app.get('/products', verifyToken, async (req, res) => {
 		// res.send(products);
 		res.status(200).json({ products, message: 'Product Fetched successfully' });
 	} catch (error) {
-		res.status(500).json({ error: 'Internal Server Error' });
+		res.status(500).json({ error, message: 'Internal Server Error' });
 	}
 });
 
