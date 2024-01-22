@@ -46,7 +46,7 @@ app.get('/products', verifyToken, async (req, res) => {
 	}
 });
 
-// GEt single Product
+// GEt single Products
 app.get('/product/:id', verifyToken, async (req, res) => {
 	try {
 		// Check if the product exists
