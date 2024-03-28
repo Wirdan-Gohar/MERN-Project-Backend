@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+jwtSecreteKey = 'Secrete-json-key-09&*823df74dfs434n34afd34o34as(#$';
 
 function verifyToken(req, res, next) {
 	// split is using to split barer and token and store the token in headerToken
@@ -13,13 +14,17 @@ function verifyToken(req, res, next) {
 						success: false,
 						message: 'Provide Valid Token',
 					});
-				} else next();
+				} else {
+					const decodedToken = jwt.verify(splitToken, jwtSecreteKey); // Replace 'your_secret_key' with your actual secret key
+					req.userID = decodedToken.user._id;
+					next();
+				}
 			});
 		} else {
 			res.status(401).json({ Error: 'Please Provide Token in Headers' });
 		}
 	} catch (error) {
-		res.status(401).json({ Error: 'Please Provide Token in Headers' });
+		res.status(401).json({ Error: 'Authorization header is missing' });
 	}
 }
 
