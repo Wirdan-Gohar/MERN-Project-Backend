@@ -1,5 +1,5 @@
 const Product = require('../db/Modals/Products');
-const verifyToken = require('../db/Middlewares/verifyToken.js');
+const verifyToken = require('../db/MIddlewares/verifyToken');
 const express = require('express')
 const router = express.Router()
 
