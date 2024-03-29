@@ -2,7 +2,7 @@ const express = require('express');
 require('./db/config');
 const ProductRouter = require('./routes/productRoutes');
 const Product = require('./db/Modals/Products');
-const verifyToken = require('./db/Middlewares/verifyToken');
+const verifyToken = require('./db/MIddlewares/verifyToken');
 // for user routes 
 const User = require('./db/Modals/Users');
 const jwt = require('jsonwebtoken');
